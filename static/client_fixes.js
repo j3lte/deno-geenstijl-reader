@@ -7,3 +7,14 @@ function calcSize() {
 
 calcSize();
 window.onresize = calcSize;
+
+function manifestLoader() {
+  const link = document.createElement('link');
+  link.type = "manifest";
+
+  document.head.appendChild(link);
+
+  link.href = "/manifest.json";
+}
+
+manifestLoader();

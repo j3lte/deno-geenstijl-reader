@@ -7,7 +7,6 @@ export default function Header() {
     <div
       class={tw`h-20 flex flex-none flex-col justify-center items-center grow-0 bg-gradient-to-b from-[#fc32a9] to-white relative`}
     >
-      <link rel="manifest" href="/manifest.json" />
       <span>
         <a class={tw`font-bold`} href="/">
           Home

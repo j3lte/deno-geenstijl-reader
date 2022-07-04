@@ -20,7 +20,7 @@ export default function Footer({ backLink }: FooterProps) {
           </a>
         ) : null}
       </div>
-      <script src={asset("/fix-vh.js")} />
+      <script src={asset("/client_fixes.js")} />
     </>
   );
 }
