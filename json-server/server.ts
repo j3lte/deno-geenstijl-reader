@@ -1,7 +1,7 @@
 import { Application, Context, isHttpError, Router, Status } from "oak/mod.ts";
 import { bold, cyan, green, yellow } from "fmt/colors.ts";
 
-import { getArchive, getArchives, getArticle } from "../gstools/mod.ts";
+import { getArchive, getArchives, getArticle } from "@/gstools/mod.ts";
 
 const router = new Router();
 const controller = new AbortController();

@@ -15,7 +15,7 @@ export function Page({
   return (
     <>
       <div
-        class={tw`mx-auto max-w-screen-lg flex flex-col h-screen`}
+        class={tw`mx-auto max-w-screen-lg flex flex-col h-screen subpixel-antialiased`}
         style={{ height: `calc(var(--vh, 1vh) * 100)` }}
       >
         <Header />

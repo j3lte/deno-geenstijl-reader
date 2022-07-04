@@ -4,7 +4,7 @@ import { tw } from "@twind";
 import { decode } from "encoding/base64url.ts";
 
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { getArticle, Article } from "../../gstools/mod.ts";
+import { getArticle, Article } from "@/gstools/mod.ts";
 import { Page } from "@/helpers/Page.tsx";
 import ImageDisplay from "@/islands/ImageDisplay.tsx";
 

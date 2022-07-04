@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
-import { getArchives, ArchiveOverviewEntry } from "../gstools/mod.ts";
+import { getArchives, ArchiveOverviewEntry } from "@/gstools/mod.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Page } from "@/helpers/Page.tsx";
 

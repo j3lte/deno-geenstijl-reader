@@ -1,6 +1,6 @@
 import { HandlerContext } from "$fresh/server.ts";
 import { decode } from "encoding/base64.ts";
-import { getArticle } from "../../../gstools/mod.ts";
+import { getArticle } from "@/gstools/mod.ts";
 
 export const handler = async (
   _req: Request,

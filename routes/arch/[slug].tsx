@@ -2,7 +2,7 @@
 import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { getArchive, ArchiveEntry } from "../../gstools/mod.ts";
+import { getArchive, ArchiveEntry } from "@/gstools/mod.ts";
 import { Page } from "@/helpers/Page.tsx";
 
 export const handler: Handlers<ArchiveEntry[] | null> = {
