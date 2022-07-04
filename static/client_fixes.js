@@ -19,6 +19,11 @@ function manifestLoader() {
   favicon.type = 'image/x-icon';
   document.head.appendChild(favicon);
   favicon.href = "/images/icons-256.png";
+
+  const themeColor = document.createElement('meta');
+  themeColor.name = 'theme-color';
+  themeColor.content = '#fc32a9';
+  document.head.appendChild(themeColor);
 }
 
 manifestLoader();
