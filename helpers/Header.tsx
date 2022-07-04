@@ -33,7 +33,7 @@ export default function Header({ sidebarSwitch }: { sidebarSwitch?: boolean }) {
           Fresh
         </a>
       </span>
-      <SidebarSwitch />
+      {Boolean(sidebarSwitch) && <SidebarSwitch />}
     </div>
   );
 }

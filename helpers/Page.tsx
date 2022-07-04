@@ -38,7 +38,7 @@ export function Page({
         class={tw`mx-auto max-w-screen-lg flex flex-col h-screen subpixel-antialiased`}
         style={{ height: `calc(var(--vh, 1vh) * 100)` }}
       >
-        <Header sidebarSwitch />
+        <Header sidebarSwitch={sidebarSwitch} />
         {children}
         <Footer backLink={backLink} />
       </div>
