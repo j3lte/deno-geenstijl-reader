@@ -2,6 +2,7 @@
 /** @jsxFrag Fragment */
 import { h, Fragment } from "preact";
 import { tw } from "@twind";
+import { asset } from "$fresh/runtime.ts";
 
 interface FooterProps {
   backLink?: string | null;
@@ -19,7 +20,7 @@ export default function Footer({ backLink }: FooterProps) {
           </a>
         ) : null}
       </div>
-      <script src="/fix-vh.js" />
+      <script src={asset("/fix-vh.js")} />
     </>
   );
 }
