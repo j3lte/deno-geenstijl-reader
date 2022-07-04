@@ -10,11 +10,15 @@ window.onresize = calcSize;
 
 function manifestLoader() {
   const link = document.createElement('link');
-  link.type = "manifest";
-
+  link.rel = "manifest";
   document.head.appendChild(link);
-
   link.href = "/manifest.json";
+
+  const favicon = document.createElement('link');
+  favicon.rel = 'shortcut icon';
+  favicon.type = 'image/x-icon';
+  document.head.appendChild(favicon);
+  favicon.href = "/images/icons-256.png";
 }
 
 manifestLoader();

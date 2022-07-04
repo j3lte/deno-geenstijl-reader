@@ -9,9 +9,35 @@
   ],
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/?utm_source=pwa",
+  "start_url": "/",
   "name": "Mini Geenstijl Reader",
   "short_name": "Mini GS",
   "description": "Read GS through Deno",
-  "icons": []
+  "icons": [
+    {
+      "src": "/images/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/images/icons-384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
 }
