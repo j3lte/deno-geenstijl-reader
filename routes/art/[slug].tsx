@@ -32,9 +32,8 @@ export const handler: Handlers<Article | null> = {
 };
 
 const DataTable = ({ article }: { article: Article }) => {
-  const cellClass =
-    "border border-slate-400 p-2 text-base align-top table-cell";
-  const firstCellClass = `${cellClass} text-sm`;
+  const cellClass = "border border-slate-400 p-2 align-top table-cell";
+  const firstCellClass = `${cellClass} text-xs`;
   const contentCellClass = `${cellClass} break-all`;
   const contentTextClass = `${cellClass} break-words`;
   return (
