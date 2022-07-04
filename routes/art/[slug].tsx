@@ -130,7 +130,7 @@ const DataTable = ({ article }: { article: Article }) => {
               ));
 
               return (
-                <div class={tw`block flex p-2 flex-col`}>
+                <div class={tw`block flex p-2 flex-col text-xs`}>
                   <div
                     class={tw`${c.redacted ? "bg-red-100" : ""} ${
                       c.userBanned ? "bg-red-500" : ""
