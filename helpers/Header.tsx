@@ -2,9 +2,7 @@
 import { h } from "preact";
 import { tw } from "@twind";
 
-interface HeaderProps {}
-
-export default function Header(props: HeaderProps) {
+export default function Header() {
   return (
     <div
       class={tw`h-20 flex flex-none flex-col justify-center items-center grow-0 bg-gradient-to-b from-[#fc32a9] to-white relative`}

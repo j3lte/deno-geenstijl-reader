@@ -5,8 +5,7 @@ import { decode } from "encoding/base64url.ts";
 
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { getArticle, Article } from "../../gstools/mod.ts";
-import Header from "../../islands/Header.tsx";
-import Footer from "../../islands/Footer.tsx";
+import { Page } from "@/helpers/Page.tsx";
 
 export const handler: Handlers<Article | null> = {
   async GET(_, ctx) {
@@ -163,11 +162,7 @@ const DataTable = ({ article }: { article: Article }) => {
 
 export default function Greet({ data }: PageProps<Article | null>) {
   return (
-    <div
-      class={tw`mx-auto max-w-screen-lg flex flex-col h-screen`}
-      style={{ height: `calc(var(--vh, 1vh) * 100)` }}
-    >
-      <Header />
+    <Page backLink={data !== null ? `/arch/${data.year}-${data.month}` : null}>
       <div
         class={tw`flex-grow-1 overflow-y-auto overflow-x-hidden relative py-4 px-2 ${
           data === null ? "flex justify-center items-center " : ""
@@ -181,9 +176,6 @@ export default function Greet({ data }: PageProps<Article | null>) {
           <DataTable article={data} />
         )}
       </div>
-      <Footer
-        backLink={data === null ? null : `/arch/${data.year}-${data.month}`}
-      />
-    </div>
+    </Page>
   );
 }

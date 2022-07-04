@@ -3,8 +3,7 @@ import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { getArchive, ArchiveEntry } from "../../gstools/mod.ts";
-import Header from "../../islands/Header.tsx";
-import Footer from "../../islands/Footer.tsx";
+import { Page } from "@/helpers/Page.tsx";
 
 export const handler: Handlers<ArchiveEntry[] | null> = {
   async GET(_, ctx) {
@@ -33,11 +32,7 @@ export default function Greet({ data }: PageProps<ArchiveEntry[] | null>) {
     return <div>Invalid page param!</div>;
   }
   return (
-    <div
-      class={tw`mx-auto max-w-screen-lg flex flex-col h-screen`}
-      style={{ height: `calc(var(--vh, 1vh) * 100)` }}
-    >
-      <Header />
+    <Page backLink={"/"}>
       <div
         class={tw`flex-grow-1 overflow-y-auto overflow-x-hidden py-4 px-2 divide-y`}
       >
@@ -54,7 +49,6 @@ export default function Greet({ data }: PageProps<ArchiveEntry[] | null>) {
           );
         })}
       </div>
-      <Footer backLink={`/`} />
-    </div>
+    </Page>
   );
 }

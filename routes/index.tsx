@@ -3,8 +3,7 @@ import { h } from "preact";
 import { tw } from "@twind";
 import { getArchives, ArchiveOverviewEntry } from "../gstools/mod.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import Header from "../islands/Header.tsx";
-import Footer from "../islands/Footer.tsx";
+import { Page } from "@/helpers/Page.tsx";
 
 export const handler: Handlers<ArchiveOverviewEntry[]> = {
   async GET(_, ctx) {
@@ -13,13 +12,9 @@ export const handler: Handlers<ArchiveOverviewEntry[]> = {
   },
 };
 
-export default function Page({ data }: PageProps<ArchiveOverviewEntry[]>) {
+export default function Home({ data }: PageProps<ArchiveOverviewEntry[]>) {
   return (
-    <div
-      class={tw`mx-auto max-w-screen-lg flex flex-col h-screen`}
-      style={{ height: `calc(var(--vh, 1vh) * 100)` }}
-    >
-      <Header />
+    <Page>
       <div
         class={tw`flex-grow-1 overflow-y-auto overflow-x-hidden py-4 px-2 divide-y`}
       >
@@ -36,7 +31,6 @@ export default function Page({ data }: PageProps<ArchiveOverviewEntry[]>) {
           );
         })}
       </div>
-      <Footer />
-    </div>
+    </Page>
   );
 }
