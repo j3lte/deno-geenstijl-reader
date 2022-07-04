@@ -24,6 +24,13 @@ function manifestLoader() {
   themeColor.name = 'theme-color';
   themeColor.content = '#fc32a9';
   document.head.appendChild(themeColor);
+
+  const viewPort = document.querySelector('meta[name="viewport"]');
+  if (viewPort) {
+    viewPort.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+  }
+
+  console.log(viewPort)
 }
 
 manifestLoader();
