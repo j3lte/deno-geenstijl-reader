@@ -103,13 +103,16 @@ export const parseArticle = async (
       elementArticle.querySelector(selector)?._appendTo(textHTML);
     });
 
-    [".puu-social_quote", ".twitter-video", ".instagram-media"].forEach(
-      (selector) => {
-        textNode.querySelectorAll(selector).forEach((node) => {
-          node._remove();
-        });
-      }
-    );
+    [
+      ".puu-social_quote",
+      ".twitter-video",
+      ".instagram-media",
+      ".puu-video_frame",
+    ].forEach((selector) => {
+      textNode.querySelectorAll(selector).forEach((node) => {
+        node._remove();
+      });
+    });
 
     articleObj.text = cleanParagraphs(textNode.textContent);
     articleObj.html = cleanWhiteSpace(textHTML.innerHTML);
