@@ -113,7 +113,7 @@ const DataTable = ({ article }: { article: Article }) => {
         </div>
         <div class={tw`table-row`}>
           <div class={tw`${cellClass}`}>Comments:</div>
-          <div class={tw`${contentCellClass} text-xs divide-y`}>
+          <div class={tw`${contentTextClass} text-xs divide-y`}>
             {article.comments?.map((c) => {
               const hasComments = c.comments && c.comments.length > 0;
               const sub = c.comments?.map((sub) => (
