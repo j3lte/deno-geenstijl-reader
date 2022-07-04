@@ -32,7 +32,7 @@ export const ArticleTable = ({
           <div class={tw`${firstCellClass}`}>Text:</div>
           <div class={tw`${contentTextClass} `}>
             {article.text?.map((val) => (
-              <span class={tw`block text-base leading-4 mb-2`}>{val}</span>
+              <span class={tw`block text-base leading-6 mb-2`}>{val}</span>
             ))}
           </div>
         </div>
