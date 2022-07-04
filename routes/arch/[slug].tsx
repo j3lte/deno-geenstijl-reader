@@ -41,9 +41,12 @@ export default function Greet({ data }: PageProps<ArchiveEntry[] | null>) {
             <div class={tw`py-1`}>
               <a
                 href={`/art/${entry.link_encoded}`}
-                class={tw`block w-full hover:bg-gray-100`}
+                class={tw`block w-full hover:bg-gray-100 py-2 flex items-center`}
               >
-                {entry.date} {entry.title}
+                <span class={tw`mr-2 text-xs font-bold break-normal w-20`}>
+                  [{entry.date}]
+                </span>
+                <span class={tw`truncate`}>{entry.title}</span>
               </a>
             </div>
           );

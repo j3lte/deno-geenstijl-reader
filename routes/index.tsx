@@ -23,7 +23,7 @@ export default function Home({ data }: PageProps<ArchiveOverviewEntry[]>) {
             <div class={tw`py-1`}>
               <a
                 href={`/arch/${entry.year}-${entry.month}`}
-                class={tw`block w-full hover:bg-gray-100`}
+                class={tw`block w-full hover:bg-gray-100 p-2`}
               >
                 &#8594; {entry.monthStr} {entry.year}
               </a>
