@@ -12,7 +12,7 @@ export default function Header() {
           Home
         </a>
       </span>
-      <span class={tw`absolute top-1 right-1 text-xs italic`}>
+      <span class={tw`absolute top-3 right-3 text-xs italic`}>
         Mini{" "}
         <a
           class={tw`font-bold`}
