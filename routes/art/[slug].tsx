@@ -33,6 +33,7 @@ export const handler: Handlers<Article | null> = {
 const DataTable = ({ article }: { article: Article }) => {
   const cellClass =
     "border border-slate-400 p-2 text-base align-top table-cell";
+  const firstCellClass = `${cellClass} text-sm`;
   const contentCellClass = `${cellClass} break-all`;
   const contentTextClass = `${cellClass} break-words`;
   return (
@@ -41,21 +42,21 @@ const DataTable = ({ article }: { article: Article }) => {
     >
       <div class={tw`table-row-group`}>
         <div class={tw`table-row`}>
-          <div class={tw`${cellClass}`}>Title:</div>
+          <div class={tw`${firstCellClass}`}>Title:</div>
           <div class={tw`${contentCellClass} font-bold`}>{article.title}</div>
         </div>
         <div class={tw`table-row`}>
-          <div class={tw`${cellClass}`}>Date:</div>
+          <div class={tw`${firstCellClass}`}>Date:</div>
           <div class={tw`${contentCellClass}`}>
             {article.date} {article.time}
           </div>
         </div>
         <div class={tw`table-row`}>
-          <div class={tw`${cellClass}`}>Author:</div>
+          <div class={tw`${firstCellClass}`}>Author:</div>
           <div class={tw`${contentCellClass}`}>{article.author}</div>
         </div>
         <div class={tw`table-row`}>
-          <div class={tw`${cellClass}`}>Link:</div>
+          <div class={tw`${firstCellClass}`}>Link:</div>
           <div class={tw`${contentCellClass}`}>
             <a
               href={article.url}
@@ -68,7 +69,7 @@ const DataTable = ({ article }: { article: Article }) => {
           </div>
         </div>
         <div class={tw`table-row`}>
-          <div class={tw`${cellClass}`}>Text:</div>
+          <div class={tw`${firstCellClass}`}>Text:</div>
           <div class={tw`${contentTextClass} `}>
             {article.text?.map((val) => (
               <span class={tw`block text-base leading-4 mb-2`}>{val}</span>
@@ -76,7 +77,7 @@ const DataTable = ({ article }: { article: Article }) => {
           </div>
         </div>
         <div class={tw`table-row`}>
-          <div class={tw`${cellClass}`}>Links:</div>
+          <div class={tw`${firstCellClass}`}>Links:</div>
           <div class={tw`${contentCellClass}`}>
             {article.links
               ?.filter((l) => l.href && l.href !== "#")
@@ -90,7 +91,7 @@ const DataTable = ({ article }: { article: Article }) => {
           </div>
         </div>
         <div class={tw`table-row`}>
-          <div class={tw`${cellClass}`}>Data:</div>
+          <div class={tw`${firstCellClass}`}>Data:</div>
           <div class={tw`${contentCellClass} font-bold`}>
             <a
               href={`/api/article/${article.url_encoded}`}
@@ -102,17 +103,29 @@ const DataTable = ({ article }: { article: Article }) => {
           </div>
         </div>
         <div class={tw`table-row`}>
-          <div class={tw`${cellClass}`}>Image:</div>
+          <div class={tw`${firstCellClass}`}>Social:</div>
           <div class={tw`${contentCellClass}`}>
             {article.img ? (
               <a href={article.img} target="_blank" rel="noopener noreferrer">
-                <img class={tw`max-h-32`} src={article.img} />
+                <img class={tw`max-h-20`} src={article.img} />
               </a>
             ) : null}
           </div>
         </div>
         <div class={tw`table-row`}>
-          <div class={tw`${cellClass}`}>Comments:</div>
+          <div class={tw`${firstCellClass}`}>Images:</div>
+          <div class={tw`${contentCellClass}`}>
+            <div class={tw`grid gap-4 grid-cols-3`}>
+              {article.imgs?.map((src) => (
+                <a href={src} target="_blank" rel="noopener noreferrer">
+                  <img class={tw`max-h-40 max-w-40`} src={src} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div class={tw`table-row`}>
+          <div class={tw`${firstCellClass}`}>Comments:</div>
           <div class={tw`${contentTextClass} text-xs divide-y`}>
             {article.comments?.map((c) => {
               const hasComments = c.comments && c.comments.length > 0;

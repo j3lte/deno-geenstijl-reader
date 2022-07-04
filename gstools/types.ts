@@ -39,6 +39,7 @@ export type Article = {
   index?: number;
   title?: string;
   img?: string;
+  imgs?: string[];
   author?: string;
   date?: string;
   year?: number;

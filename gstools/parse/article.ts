@@ -81,6 +81,17 @@ export const parseArticle = async (
       parseFooterDateTime(elementFooter, articleObj);
     }
 
+    const articleImages = elementArticle.querySelectorAll("img");
+    nodeListEach(articleImages, (el) => {
+      const src = el.getAttribute("src");
+      if (!articleObj.imgs) {
+        articleObj.imgs = [];
+      }
+      if (src) {
+        articleObj.imgs.push(src);
+      }
+    });
+
     const textNode = doc.createElement("div");
     const textHTML = doc.createElement("div");
 
