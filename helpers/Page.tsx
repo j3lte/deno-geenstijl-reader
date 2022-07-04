@@ -9,9 +9,11 @@ import Footer from "@/helpers/Footer.tsx";
 export function Page({
   children,
   backLink,
+  sidebarSwitch,
 }: {
   children: ComponentChildren;
   backLink?: string | null;
+  sidebarSwitch?: boolean;
 }) {
   return (
     <>
@@ -36,7 +38,7 @@ export function Page({
         class={tw`mx-auto max-w-screen-lg flex flex-col h-screen subpixel-antialiased`}
         style={{ height: `calc(var(--vh, 1vh) * 100)` }}
       >
-        <Header />
+        <Header sidebarSwitch />
         {children}
         <Footer backLink={backLink} />
       </div>

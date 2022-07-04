@@ -1,8 +1,9 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
+import SidebarSwitch from "@/islands/SidebarSwitch.tsx";
 
-export default function Header() {
+export default function Header({ sidebarSwitch }: { sidebarSwitch?: boolean }) {
   return (
     <div
       class={tw`h-20 flex flex-none flex-col justify-center items-center grow-0 bg-gradient-to-b from-[#fc32a9] to-white relative`}
@@ -32,6 +33,7 @@ export default function Header() {
           Fresh
         </a>
       </span>
+      <SidebarSwitch />
     </div>
   );
 }

@@ -11,6 +11,8 @@
     "oak/": "https://deno.land/x/oak@v10.6.0/",
     "fmt/": "https://deno.land/std@0.144.0/fmt/",
     "encoding/": "https://deno.land/std@0.144.0/encoding/",
-    "deno_dom/": "https://deno.land/x/deno_dom@v0.1.31-alpha/"
+    "http/": "https://deno.land/std@0.144.0/http/",
+    "deno_dom/": "https://deno.land/x/deno_dom@v0.1.31-alpha/",
+    "react-use-cookie": "https://esm.sh/react-use-cookie@1.4.0?no-check&alias=react:preact/compat&deps=preact@10.8.1"
   }
 }
