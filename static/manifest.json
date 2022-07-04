@@ -1,0 +1,17 @@
+{
+  "theme_color": "#fc32a9",
+  "background_color": "#fc32a9",
+  "display": "standalone",
+  "lang": "en-US",
+  "display_override": [
+    "fullscreen",
+    "minimal-ui"
+  ],
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/?utm_source=pwa",
+  "name": "Mini Geenstijl Reader",
+  "short_name": "Mini GS",
+  "description": "Read GS through Deno",
+  "icons": []
+}

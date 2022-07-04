@@ -46,6 +46,7 @@ export const getArticle = async (url: string): Promise<Article> => {
     console.error(error);
     return {
       url,
+      url_encoded: "",
     };
   }
 };
