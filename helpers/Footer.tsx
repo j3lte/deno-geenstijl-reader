@@ -1,4 +1,5 @@
 /** @jsx h */
+/** @jsxFrag Fragment */
 import { h, Fragment } from "preact";
 import { tw } from "@twind";
 
@@ -8,7 +9,7 @@ interface FooterProps {
 
 export default function Footer({ backLink }: FooterProps) {
   return (
-    <Fragment>
+    <>
       <div
         class={tw`h-20 flex flex-none flex-col justify-center items-center grow-0 bg-gradient-to-t from-[#fc32a9] to-white`}
       >
@@ -19,6 +20,6 @@ export default function Footer({ backLink }: FooterProps) {
         ) : null}
       </div>
       <script src="/fix-vh.js" />
-    </Fragment>
+    </>
   );
 }

@@ -6,6 +6,7 @@ import { decode } from "encoding/base64url.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { getArticle, Article } from "../../gstools/mod.ts";
 import { Page } from "@/helpers/Page.tsx";
+import ImageDisplay from "@/islands/ImageDisplay.tsx";
 
 export const handler: Handlers<Article | null> = {
   async GET(_, ctx) {
@@ -106,9 +107,7 @@ const DataTable = ({ article }: { article: Article }) => {
           <div class={tw`${firstCellClass}`}>Social:</div>
           <div class={tw`${contentCellClass}`}>
             {article.img ? (
-              <a href={article.img} target="_blank" rel="noopener noreferrer">
-                <img class={tw`max-h-20`} src={article.img} />
-              </a>
+              <ImageDisplay src={article.img} modal className={tw`max-h-20`} />
             ) : null}
           </div>
         </div>
@@ -117,9 +116,11 @@ const DataTable = ({ article }: { article: Article }) => {
           <div class={tw`${contentCellClass}`}>
             <div class={tw`grid gap-4 grid-cols-3`}>
               {article.imgs?.map((src) => (
-                <a href={src} target="_blank" rel="noopener noreferrer">
-                  <img class={tw`max-h-40 max-w-40`} src={src} />
-                </a>
+                <ImageDisplay
+                  src={src}
+                  modal
+                  className={tw`max-h-40 max-w-40`}
+                />
               ))}
             </div>
           </div>
