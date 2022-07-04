@@ -58,7 +58,12 @@ const DataTable = ({ article }: { article: Article }) => {
         <div class={tw`table-row`}>
           <div class={tw`${cellClass}`}>Link:</div>
           <div class={tw`${contentCellClass}`}>
-            <a href={article.url} target="_blank" class={tw``}>
+            <a
+              href={article.url}
+              target="_blank"
+              class={tw``}
+              rel="noopener noreferrer"
+            >
               {article.url}
             </a>
           </div>
@@ -78,7 +83,7 @@ const DataTable = ({ article }: { article: Article }) => {
               ?.filter((l) => l.href && l.href !== "#")
               .map((link) => (
                 <span class={tw`block text-sm`}>
-                  <a href={link.href} target="_blank">
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">
                     {link.href}
                   </a>
                 </span>
@@ -88,7 +93,11 @@ const DataTable = ({ article }: { article: Article }) => {
         <div class={tw`table-row`}>
           <div class={tw`${cellClass}`}>Data:</div>
           <div class={tw`${contentCellClass} font-bold`}>
-            <a href={`/api/article/${article.url_encoded}`} target="_blank">
+            <a
+              href={`/api/article/${article.url_encoded}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Click to open
             </a>
           </div>
@@ -97,7 +106,7 @@ const DataTable = ({ article }: { article: Article }) => {
           <div class={tw`${cellClass}`}>Image:</div>
           <div class={tw`${contentCellClass}`}>
             {article.img ? (
-              <a href={article.img} target="_blank">
+              <a href={article.img} target="_blank" rel="noopener noreferrer">
                 <img class={tw`max-h-32`} src={article.img} />
               </a>
             ) : null}

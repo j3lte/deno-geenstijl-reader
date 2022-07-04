@@ -20,11 +20,17 @@ export default function Header(props: HeaderProps) {
           class={tw`font-bold`}
           href="https://www.geenstijl.nl/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Geenstijl
         </a>{" "}
         reader, built in{" "}
-        <a class={tw`font-bold`} href="https://fresh.deno.dev/" target="_blank">
+        <a
+          class={tw`font-bold`}
+          href="https://fresh.deno.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Fresh
         </a>
       </span>
