@@ -1,7 +1,6 @@
 {
   "importMap": "./import_map.json",
   "tasks": {
-    "json": "deno run --allow-net ./json-server/server.ts",
     "web": "deno run -A --watch=static/,routes/ dev.ts"
   }
 }
