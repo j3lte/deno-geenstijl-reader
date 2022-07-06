@@ -26,7 +26,7 @@ export const ArticleTable = ({
       <div class={tw`table-row-group`}>
         <div class={tw`table-row`}>
           <div class={tw`${firstCellClass}`}>Title:</div>
-          <div class={tw`${contentCellClass} font-bold`}>{article.title}</div>
+          <div class={tw`${contentTextClass} font-bold`}>{article.title}</div>
         </div>
         <div class={tw`table-row`}>
           <div class={tw`${firstCellClass}`}>Text:</div>
