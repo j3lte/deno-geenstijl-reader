@@ -31,7 +31,11 @@ const Modal = ({
       }}
     >
       <div>
-        <img src={src} class={tw`max-w-screen max-h-screen`} />
+        <img
+          src={src}
+          class={tw`max-w-screen`}
+          style={{ maxHeight: `calc(var(--vh, 1vh) * 100)` }}
+        />
       </div>
     </div>
   );
