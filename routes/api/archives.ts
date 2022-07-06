@@ -6,7 +6,7 @@ export const handler = async (
   _ctx: HandlerContext
 ): Promise<Response> => {
   try {
-    const archives = await getArchives();
+    const archives = (await getArchives()).sort((a, b) => b.num - a.num);
     return new Response(JSON.stringify(archives), {
       status: 200,
       headers: { "Content-Type": "application/json" },
