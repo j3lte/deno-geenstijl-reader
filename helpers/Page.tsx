@@ -35,6 +35,7 @@ export function Page({
           type="image/x-icon"
           href="/images/icons-256.png"
         />
+        <meta name="robots" content="noindex, nofollow" />
         <meta name="theme-color" content="#fc32a9" />
         <meta
           name="viewport"
