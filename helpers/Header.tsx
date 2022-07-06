@@ -9,7 +9,7 @@ export default function Header({ sidebarSwitch }: { sidebarSwitch?: boolean }) {
       class={tw`h-20 flex flex-none flex-col justify-center items-center grow-0 bg-gradient-to-b from-[#fc32a9] to-white relative`}
     >
       <span>
-        <a class={tw`font-bold`} href="/">
+        <a class={tw`font-bold text-xl`} href="/">
           Home
         </a>
       </span>

@@ -7,7 +7,7 @@ export const config: Configuration = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ["Montserrat", "sans-serif"],
+        custom: ["Open Sans", "sans-serif"],
       },
     },
   },

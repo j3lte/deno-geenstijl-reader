@@ -15,7 +15,7 @@ export default function Footer({ backLink }: FooterProps) {
         class={tw`h-20 flex flex-none flex-col justify-center items-center grow-0 bg-gradient-to-t from-[#fc32a9] to-white relative`}
       >
         {backLink && backLink !== null ? (
-          <a class={tw`text-xl`} href={backLink}>
+          <a class={tw`text-xl font-bold`} href={backLink}>
             &#8592; Back
           </a>
         ) : null}
