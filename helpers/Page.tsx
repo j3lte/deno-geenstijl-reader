@@ -37,14 +37,12 @@ export function Page({
         />
         <meta name="robots" content="noindex, nofollow" />
         <meta name="theme-color" content="#fc32a9" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=2.0"
-        />
-
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
+          media="print"
+          // @ts-ignore
+          onLoad="this.media='all'"
         />
       </Head>
       <div

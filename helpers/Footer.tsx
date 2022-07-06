@@ -24,6 +24,8 @@ export default function Footer({ backLink }: FooterProps) {
             href="https://github.com/j3lte/deno-geenstijl-reader"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Open project on Github"
+            title="Open project on Github"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
