@@ -2,6 +2,7 @@
 /** @jsxFrag Fragment */
 import { h, Fragment } from "preact";
 import { useState } from "preact/hooks";
+import { createPortal } from "preact/compat";
 import { tw } from "@twind";
 
 interface ImageDisplayProps {
@@ -10,6 +11,38 @@ interface ImageDisplayProps {
   clickable?: boolean;
   modal?: boolean;
 }
+
+const Modal = ({
+  opened,
+  setOpened,
+  src,
+}: {
+  opened: boolean;
+  setOpened: (state: boolean) => void;
+  src: string;
+}) => {
+  const el = (
+    <div
+      class={tw`fixed top-0 left-0 backdrop-filter backdrop-blur-lg bg-gray-100 bg-opacity-80 w-screen h-screen flex justify-center items-center ${
+        opened ? "" : "hidden"
+      }`}
+      onClickCapture={() => {
+        setOpened(false);
+      }}
+    >
+      <div>
+        <img src={src} class={tw`max-w-screen max-h-screen`} />
+      </div>
+    </div>
+  );
+
+  if (window && typeof document !== "undefined") {
+    const modals = document.getElementById("modals") as HTMLElement;
+    return createPortal(el, modals);
+  }
+
+  return el;
+};
 
 export default function ImageDisplay({
   src,
@@ -28,18 +61,7 @@ export default function ImageDisplay({
   } else if (modal) {
     return (
       <>
-        <div
-          class={tw`fixed top-0 left-0 backdrop-filter backdrop-blur-lg bg-gray-100 bg-opacity-80 w-screen h-screen flex justify-center items-center ${
-            opened ? "" : "hidden"
-          }`}
-          onClickCapture={() => {
-            setOpened(false);
-          }}
-        >
-          <div>
-            <img src={src} class={tw`max-w-screen max-h-screen`} />
-          </div>
-        </div>
+        <Modal opened={opened} setOpened={setOpened} src={src} />
         <img
           class={className}
           src={src}

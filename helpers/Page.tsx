@@ -53,6 +53,7 @@ export function Page({
         <Header sidebarSwitch={sidebarSwitch} />
         {children}
         <Footer backLink={backLink} />
+        <div id="modals" />
       </div>
     </>
   );
