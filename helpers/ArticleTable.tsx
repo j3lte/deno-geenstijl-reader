@@ -21,7 +21,7 @@ export const ArticleTable = ({
   const contentTextClass = `${cellClass} break-words`;
   return (
     <div
-      class={tw`table-auto border-spacing-2 border-collapse border border-slate-400 w-full max-w-full`}
+      class={tw`table-auto border-spacing-2 border-collapse border-slate-400 w-full max-w-full`}
     >
       <div class={tw`table-row-group`}>
         <div class={tw`table-row`}>
