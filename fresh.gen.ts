@@ -4,10 +4,10 @@
 
 import * as $0 from "./routes/_404.tsx";
 import * as $1 from "./routes/_500.tsx";
-import * as $2 from "./routes/api/archive/[slug].ts";
-import * as $3 from "./routes/api/archives.ts";
+import * as $2 from "./routes/api/archives.ts";
+import * as $3 from "./routes/api/archives/[...slug].ts";
 import * as $4 from "./routes/api/article/[slug].ts";
-import * as $5 from "./routes/arch/[slug].tsx";
+import * as $5 from "./routes/archives/[...slug].tsx";
 import * as $6 from "./routes/art/[slug].tsx";
 import * as $7 from "./routes/index.tsx";
 import * as $$0 from "./islands/ImageDisplay.tsx";
@@ -17,10 +17,10 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $0,
     "./routes/_500.tsx": $1,
-    "./routes/api/archive/[slug].ts": $2,
-    "./routes/api/archives.ts": $3,
+    "./routes/api/archives.ts": $2,
+    "./routes/api/archives/[...slug].ts": $3,
     "./routes/api/article/[slug].ts": $4,
-    "./routes/arch/[slug].tsx": $5,
+    "./routes/archives/[...slug].tsx": $5,
     "./routes/art/[slug].tsx": $6,
     "./routes/index.tsx": $7,
   },

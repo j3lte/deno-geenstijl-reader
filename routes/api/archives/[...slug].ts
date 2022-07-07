@@ -13,16 +13,21 @@ export const handler = async (
   try {
     const arr = (ctx.params.slug || "")
       .trim()
-      .split("-")
+      .split("/")
       .map((x) => parseInt(x, 10));
 
     if (
       !arr ||
       arr.length !== 2 ||
       Number.isNaN(arr[0]) ||
-      Number.isNaN(arr[1])
+      Number.isNaN(arr[1]) ||
+      arr[1] > 12 ||
+      arr[1] < 1
     ) {
-      return ctx.render(null);
+      return new Response(null, {
+        status: 500,
+        statusText: "Invalid params for archives",
+      });
     }
 
     const archiveEntries = await getArchive(arr[0], arr[1]);

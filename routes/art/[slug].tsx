@@ -61,7 +61,7 @@ export default function Greet({ data }: PageProps<PageData>) {
   const { article, hideFirstColumn } = data;
   return (
     <Page
-      backLink={article ? `/arch/${article.year}-${article.month}` : null}
+      backLink={article ? `/archives/${article.year}/${article.month}` : null}
       sidebarSwitch
     >
       <div
