@@ -51,7 +51,7 @@ export default function ArchivesPage({
             return (
               <div class={tw`py-1`}>
                 <a
-                  href={`/art/${entry.link_encoded}`}
+                  href={`/${entry.link_encoded}`}
                   class={tw`block w-full hover:bg-gray-100 py-2 flex flex-col items-start`}
                 >
                   <span class={tw`mr-2 text-sm pb-1`}>[ {entry.date} ]</span>
