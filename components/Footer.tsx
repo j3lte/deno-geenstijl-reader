@@ -1,7 +1,3 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { h, Fragment } from "preact";
-import { tw } from "@twind";
 import { asset } from "$fresh/runtime.ts";
 
 interface FooterProps {
@@ -12,14 +8,14 @@ export default function Footer({ backLink }: FooterProps) {
   return (
     <>
       <div
-        class={tw`h-20 flex flex-none flex-col justify-center items-center grow-0 bg-gradient-to-t from-[#fc32a9] to-white relative`}
+        class={`h-20 flex flex-none flex-col justify-center items-center grow-0 bg-gradient-to-t from-[#fc32a9] to-white relative`}
       >
         {backLink && backLink !== null ? (
-          <a class={tw`text-xl font-bold`} href={backLink}>
+          <a class={`text-xl font-bold`} href={backLink}>
             &#8592; Back
           </a>
         ) : null}
-        <div class={tw`absolute bottom-0 right-0 p-3`}>
+        <div class={`absolute bottom-0 right-0 p-3`}>
           <a
             href="https://github.com/j3lte/deno-geenstijl-reader"
             target="_blank"

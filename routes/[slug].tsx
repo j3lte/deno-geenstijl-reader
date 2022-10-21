@@ -1,13 +1,9 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { h, Fragment } from "preact";
-import { tw } from "@twind";
 import { decode } from "encoding/base64url.ts";
 
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { getArticle, Article } from "@/gstools/mod.ts";
-import { Page } from "@/helpers/Page.tsx";
-import { ArticleTable } from "@/helpers/ArticleTable.tsx";
+import { Page } from "@/components/Page.tsx";
+import { ArticleTable } from "@/components/ArticleTable.tsx";
 import { getCookies, setCookie } from "http/cookie.ts";
 
 interface PageData {
@@ -62,17 +58,14 @@ export default function Greet({ data }: PageProps<PageData>) {
   return (
     <Page
       backLink={article ? `/archives/${article.year}/${article.month}` : null}
-      sidebarSwitch
     >
       <div
-        class={tw`flex-grow-1 overflow-y-auto overflow-x-hidden relative py-4 px-2 ${
+        class={`flex-grow-1 overflow-y-auto overflow-x-hidden relative py-4 px-2 ${
           article ? "" : "flex justify-center items-center "
         }`}
       >
         {!article ? (
-          <span class={tw``}>
-            Invalid page or I cannot get the info from Geenstijl...
-          </span>
+          <span>Invalid page or I cannot get the info from Geenstijl...</span>
         ) : (
           <>
             <ArticleTable article={article} hideFirstColumn={hideFirstColumn} />

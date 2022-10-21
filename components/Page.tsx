@@ -1,19 +1,14 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { ComponentChildren, Fragment, h } from "preact";
+import { ComponentChildren } from "preact";
 import { Head } from "$fresh/runtime.ts";
-import { tw } from "@twind";
-import Header from "@/helpers/Header.tsx";
-import Footer from "@/helpers/Footer.tsx";
+import Header from "@/components/Header.tsx";
+import Footer from "@/components/Footer.tsx";
 
 export function Page({
   children,
   backLink,
-  sidebarSwitch,
 }: {
   children: ComponentChildren;
   backLink?: string | null;
-  sidebarSwitch?: boolean;
 }) {
   return (
     <>
@@ -46,10 +41,10 @@ export function Page({
         />
       </Head>
       <div
-        class={tw`mx-auto max-w-screen-lg flex flex-col h-screen font-custom`}
+        class={`mx-auto max-w-screen-lg flex flex-col h-screen font-custom`}
         style={{ height: `calc(var(--vh, 1vh) * 100)` }}
       >
-        <Header sidebarSwitch={sidebarSwitch} />
+        <Header />
         {children}
         <Footer backLink={backLink} />
         <div id="modals" />

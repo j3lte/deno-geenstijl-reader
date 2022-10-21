@@ -1,9 +1,5 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { h, Fragment } from "preact";
 import { useState } from "preact/hooks";
-import { createPortal } from "preact/compat";
-import { tw } from "@twind";
+import { createPortal, Fragment } from "preact/compat";
 
 interface ImageDisplayProps {
   src: string;
@@ -23,7 +19,7 @@ const Modal = ({
 }) => {
   const el = (
     <div
-      class={tw`fixed top-0 left-0 backdrop-filter backdrop-blur-lg bg-gray-100 bg-opacity-80 w-screen h-screen flex justify-center items-center ${
+      class={`fixed top-0 left-0 backdrop-filter backdrop-blur-lg bg-gray-100 bg-opacity-80 w-screen h-screen flex justify-center items-center ${
         opened ? "" : "hidden"
       }`}
       onClickCapture={() => {
@@ -33,7 +29,7 @@ const Modal = ({
       <div>
         <img
           src={src}
-          class={tw`max-w-screen`}
+          class={`max-w-screen`}
           style={{ maxHeight: `calc(var(--vh, 1vh) * 100)` }}
         />
       </div>
@@ -64,7 +60,7 @@ export default function ImageDisplay({
     );
   } else if (modal) {
     return (
-      <>
+      <Fragment>
         <Modal opened={opened} setOpened={setOpened} src={src} />
         <img
           class={className}
@@ -73,7 +69,7 @@ export default function ImageDisplay({
             setOpened(true);
           }}
         />
-      </>
+      </Fragment>
     );
   }
 
